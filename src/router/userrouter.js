@@ -1,0 +1,11 @@
+import express from "express";
+const router=express.Router();
+import usercontroller from "../controller/usercontroller.js";
+const{registerstudent,entercourse,enrollments,check_courses_bystudent,add_enrollments,deleteenrollment}=usercontroller;
+router.post("/registerstudent",registerstudent);
+router.post("/entercourse",entercourse);
+router.post("/enrollment",enrollments);
+router.get("/checkenrolls/:id",check_courses_bystudent);
+router.put("/addenrollments/:id",add_enrollments);
+router.put("/deleteenrollments/:id",deleteenrollment);
+export default router;
